@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amy McCall - Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Amy McCall</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://amyplount.wixsite.com/my-site-4/projects" target="_blank">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="mailto:aplount@icloud.com">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Top Container -->
+    <header class="top-container">
+        <div class="container text-center">
+            <h1>Amy McCall</h1>
+            <h2>Customer Success Manager</h2>
+            <img src="images/profile.jpeg" class="profile-pic" alt="Amy McCall">
+        </div>
+    </header>
+
+    <!-- Middle Container (Skills) -->
+    <section class="middle-container">
+        <div class="container text-center">
+            <h2>My Skills</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Data Analytics</h3>
+                    <p>Proficient in SQL, Python (pandas), and Power BI for advanced data insights.</p>
+                    <i class="fa fa-bar-chart"></i>
+                </div>
+                <div class="col-md-4">
+                    <h3>Customer Success</h3>
+                    <p>Experienced in driving customer retention and business growth through engagement.</p>
+                    <i class="fa fa-users"></i>
+                </div>
+                <div class="col-md-4">
+                    <h3>Project Management</h3>
+                    <p>Strong background in managing projects, meeting deadlines, and optimizing workflows.</p>
+                    <i class="fa fa-tasks"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom Container (Contact Info & Date) -->
+    <div class="bottom-container">
+        <div class="contact" id="contact">
+            <h1>Feel free to contact me 
+                <a href="mailto:aplount@icloud.com">
+                    <i class="fa fa-envelope email-icon"></i>
+                </a>
+            </h1>
+
+            <!-- Social Media Links -->
+            <ul class="social-menu">
+                <li><a href="https://github.com/GeekOutAI" target="_blank"><i class="fa fa-github"></i></a></li>
+                <li><a href="https://linkedin.com/in/amy-mccall73/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="https://twitter.com/aplount" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://www.instagram.com/amybaltzellmccall/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+            </ul>
+
+            <!-- Current Date -->
+            <p id="curndate"></p>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
