@@ -21,7 +21,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+
+  <!-- Font Awesome 6 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet" integrity="sha512-2VqC2qQd3B0lH2m1C9dGJNd2nO1X1yYc8q9V7b3aQnQ1Qy5A3vC3tKcL3kXQx1j6wH7Gf6cQ5I9oYp8U7o8q3Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -29,7 +35,7 @@
   <a class="visually-hidden-focusable" href="#main">Skip to content</a>
 
   <!-- NAV -->
-  <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
+  <nav class="navbar navbar-expand-lg navbar-dark shadow-sm" id="topNav">
     <div class="container">
       <a class="navbar-brand" href="index.html">Amy McCall</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,9 +62,19 @@
             Skilled in SQL, Python (pandas), and Power BI; proven delivery across complex, multi-workstream programs.
           </p>
           <div class="d-flex gap-3 flex-wrap">
-            <a class="btn btn-primary btn-pill" href="mailto:aplount@icloud.com">Contact Me</a>
-            <a class="btn btn-outline-light btn-pill" href="https://github.com/GeekOutAI" target="_blank" rel="noopener">GitHub</a>
-            <a class="btn btn-outline-light btn-pill" href="https://linkedin.com/in/amy-mccall73/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn btn-primary btn-pill" href="mailto:aplount@icloud.com">
+              <i class="fa-solid fa-envelope me-2" aria-hidden="true"></i>Contact Me
+            </a>
+            <a class="btn btn-outline-light btn-pill" href="https://github.com/GeekOutAI" target="_blank" rel="noopener">
+              <i class="fa-brands fa-github me-2" aria-hidden="true"></i>GitHub
+            </a>
+            <a class="btn btn-outline-light btn-pill" href="https://linkedin.com/in/amy-mccall73/" target="_blank" rel="noopener">
+              <i class="fa-brands fa-linkedin me-2" aria-hidden="true"></i>LinkedIn
+            </a>
+            <!-- Download Résumé -->
+            <a class="btn btn-outline-light btn-pill" href="resume/Amy_McCall_Resume.pdf" download>
+              <i class="fa-solid fa-file-arrow-down me-2" aria-hidden="true"></i>Download Résumé
+            </a>
           </div>
         </div>
         <div class="col-lg-5 ms-lg-auto text-center">
@@ -69,7 +85,7 @@
   </header>
 
   <main id="main">
-    <!-- HIGHLIGHTS (was 'Skills') -->
+    <!-- HIGHLIGHTS -->
     <section class="highlights py-5">
       <div class="container">
         <div class="row g-4">
@@ -120,7 +136,6 @@
               </div>
             </div>
           </div>
-
           <!-- Add more cards as needed -->
         </div>
       </div>
@@ -138,7 +153,9 @@
             </p>
           </div>
           <div class="col-lg-4 text-lg-end">
-            <a class="btn btn-primary btn-pill" href="mailto:aplount@icloud.com">Let’s work together</a>
+            <a class="btn btn-primary btn-pill" href="mailto:aplount@icloud.com">
+              <i class="fa-solid fa-paper-plane me-2" aria-hidden="true"></i>Let’s work together
+            </a>
           </div>
         </div>
       </div>
@@ -150,21 +167,38 @@
     <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
       <div class="small text-muted">© <span id="year"></span> Amy McCall</div>
       <ul class="social list-unstyled d-flex gap-3 m-0">
-        <li><a href="https://github.com/GeekOutAI" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a></li>
-        <li><a href="https://linkedin.com/in/amy-mccall73/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a></li>
-        <li><a href="https://twitter.com/aplount" target="_blank" rel="noopener" aria-label="Twitter">X</a></li>
-        <li><a href="mailto:aplount@icloud.com" aria-label="Email">Email</a></li>
+        <li><a href="https://github.com/GeekOutAI" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a></li>
+        <li><a href="https://linkedin.com/in/amy-mccall73/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
+        <li><a href="https://twitter.com/aplount" target="_blank" rel="noopener" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a></li>
+        <li><a href="mailto:aplount@icloud.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a></li>
       </ul>
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script>
-    // Year in footer
+    // Footer year
     document.addEventListener('DOMContentLoaded', () => {
       const y = document.getElementById('year');
       if (y) y.textContent = new Date().getFullYear();
     });
+
+    // Sticky nav on scroll
+    (function(){
+      const nav = document.getElementById('topNav');
+      if (!nav) return;
+      const onScroll = () => {
+        if (window.scrollY > 12) {
+          nav.classList.add('is-sticky');
+        } else {
+          nav.classList.remove('is-sticky');
+        }
+      };
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+    })();
   </script>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
