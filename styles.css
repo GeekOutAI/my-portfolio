@@ -1,6 +1,3 @@
-/* =============================
-   Base
-   ============================= */
 :root{
   --ink:#0b2b3b;
   --ink-soft:#164863;
@@ -11,6 +8,7 @@
   --white:#ffffff;
 }
 
+/* Base */
 html,body{height:100%}
 body{
   margin:0;
@@ -18,110 +16,74 @@ body{
   text-align:left;
   color:var(--text);
   background:var(--paper);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
   scroll-behavior:smooth;
 }
+a:focus-visible,button:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+.visually-hidden-focusable:active,.visually-hidden-focusable:focus{position:static!important;width:auto;height:auto;margin:0;clip:auto}
 
-a:focus-visible, button:focus-visible{
-  outline:3px solid var(--brand);
-  outline-offset:2px;
-}
-
-.visually-hidden-focusable:active, .visually-hidden-focusable:focus{
-  position:static!important; width:auto; height:auto; margin:0; clip:auto;
-}
-
-/* =============================
-   Navbar
-   ============================= */
+/* Navbar */
 .navbar{
   background:var(--ink-soft);
+  position:sticky;top:0;z-index:1030;
+  transition:background-color .25s,box-shadow .25s,backdrop-filter .25s;
+}
+.navbar.is-sticky{
+  background:rgba(22,72,99,.85);
+  backdrop-filter:saturate(140%) blur(6px);
+  box-shadow:0 6px 18px rgba(0,0,0,.12);
 }
 .navbar .navbar-brand{font-weight:700}
 .navbar .nav-link{color:#fff!important}
 .navbar .nav-link:hover{color:var(--brand)!important}
 
-/* =============================
-   Hero
-   ============================= */
-.hero{
-  background:linear-gradient(180deg, var(--hero), var(--ink-soft));
-  color:#fff;
-  padding:80px 0;
-}
+/* Hero */
+.hero{background:linear-gradient(180deg,var(--hero),var(--ink-soft));color:#fff;padding:80px 0}
 .text-hero{color:#EAF6FF}
 .text-hero-sub{color:#D7EAF7}
-.hero-pic{
-  width:220px; height:220px; object-fit:cover; border-radius:50%;
-  box-shadow:0 10px 24px rgba(0,0,0,.25); border:4px solid rgba(255,255,255,.25);
-}
+.hero-pic{width:220px;height:220px;object-fit:cover;border-radius:50%;box-shadow:0 10px 24px rgba(0,0,0,.25);border:4px solid rgba(255,255,255,.25)}
+.hero .d-flex.gap-3.flex-wrap>a{margin-bottom:.25rem}
 
 /* Buttons */
-.btn-pill{border-radius:999px; padding:.6rem 1.1rem; font-weight:600}
-.btn-primary{background:var(--brand); border-color:var(--brand)}
-.btn-primary:hover{background:#0a79c5; border-color:#0a79c5}
+.btn-pill{border-radius:999px;padding:.6rem 1.1rem;font-weight:600}
+.btn-primary{background:var(--brand);border-color:var(--brand)}
+.btn-primary:hover{background:#0a79c5;border-color:#0a79c5}
 
-/* =============================
-   Highlights (cards)
-   ============================= */
-.highlights{background:var(--paper)}
-.card-soft{
-  background:#fff; border:0; border-radius:16px;
-  box-shadow:0 6px 20px rgba(0,0,0,.08);
-}
-.icon-bubble{
-  width:48px;height:48px;border-radius:50%;
-  display:inline-flex;align-items:center;justify-content:center;
-  background:#E9F5FF;color:#084c75;font-size:1.4rem;
-}
+/* Highlights */
+.highlights{background:var(--paper);padding-top:3rem}
+.card-soft{background:#fff;border:0;border-radius:16px;box-shadow:0 6px 20px rgba(0,0,0,.08)}
+.icon-bubble{width:48px;height:48px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:#E9F5FF;color:#084c75;font-size:1.4rem}
 
-/* =============================
-   Projects
-   ============================= */
-.section-title{color:var(--ink-soft); font-weight:700}
+/* Projects */
+.section-title{color:var(--ink-soft);font-weight:700}
 .section-sub{color:#6fa8c9}
-.projects .card{border:0; border-radius:16px}
-.projects .card:hover{transform:translateY(-4px); transition:transform .2s ease}
+.projects .card{border:0;border-radius:16px}
+.projects .card:hover{transform:translateY(-4px);transition:transform .2s ease}
 .projects .btn{border-radius:999px}
 
-/* =============================
-   About
-   ============================= */
+/* About */
 .about{background:#fff}
 
-/* =============================
-   Footer
-   ============================= */
-.site-footer{
-  background:var(--ink-soft);
-  color:#cfe7f6;
-  padding:22px 0;
-}
-.site-footer a{color:#cfe7f6; text-decoration:none}
-.site-footer a:hover{color:#fff; text-decoration:underline}
+/* Footer */
+.site-footer{background:var(--ink-soft);color:#cfe7f6;padding:22px 0}
+.site-footer a{color:#cfe7f6;text-decoration:none;font-size:1.1rem}
+.site-footer a:hover{color:#fff;text-decoration:underline}
 
-/* =============================
-   Dark Mode
-   ============================= */
+/* Dark Mode */
 @media (prefers-color-scheme: dark){
   body{background:#121212;color:#cfe7f6}
   .highlights{background:#0f1115}
-  .card-soft, .about{background:#171a21;color:#d9e6ef}
+  .card-soft,.about{background:#171a21;color:#d9e6ef}
   .projects .card{background:#171a21}
   .projects .card .card-text{color:#cfe7f6}
   .hero{background:linear-gradient(180deg,#1e4d6b,#0f2f42)}
 }
 
-/* =============================
-   Responsive
-   ============================= */
-@media (max-width: 992px){
+/* Responsive */
+@media(max-width:992px){
   .hero{padding:60px 0}
   .hero-pic{width:180px;height:180px}
 }
-
-@media (max-width: 576px){
+@media(max-width:576px){
   .hero{padding:48px 0}
   .hero-pic{width:150px;height:150px}
 }
