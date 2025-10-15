@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Amy McCall — Portfolio</title>
-  <meta name="description" content="Portfolio of Amy McCall — Customer Success leader focused on AI-driven CX, analytics, and outcomes." />
+  <meta name="description" content="Portfolio of Amy McCall — Customer Success & Data Analytics." />
 
-  <!-- Open Graph / Twitter -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Amy McCall — Portfolio" />
   <meta property="og:description" content="Customer Success • Data Analytics • Program Delivery" />
   <meta property="og:type" content="website" />
@@ -15,108 +15,156 @@
   <meta property="og:url" content="https://geekoutai.github.io/my-portfolio/" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Favicon (optional: put /images/favicon.png in repo) -->
   <link rel="icon" href="images/favicon.png" />
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet" />
-
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEw3x9j7lVvC4YyYQ4qD0l6Qb2r9j7" crossorigin="anonymous">
-
-  <!-- Font Awesome (kept v4 for now; can upgrade later) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-  <!-- Custom Styles -->
+  <!-- Fonts / CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <!-- Skip link for a11y -->
   <a class="visually-hidden-focusable" href="#main">Skip to content</a>
 
-  <!-- Navigation Bar -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" aria-label="Main navigation">
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
     <div class="container">
       <a class="navbar-brand" href="index.html">Amy McCall</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
+      <div id="nav" class="collapse navbar-collapse">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://amyplount.wixsite.com/my-site-4/projects" target="_blank" rel="noopener">Projects</a>
-          </li>
+          <li class="nav-item"><a class="nav-link active" href="#main">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://amyplount.wixsite.com/my-site-4/projects" target="_blank" rel="noopener">Projects</a></li>
           <li class="nav-item"><a class="nav-link" href="mailto:aplount@icloud.com">Contact</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Top Container -->
-  <header class="top-container">
-    <div class="container text-center">
-      <h1>Amy McCall</h1>
-      <p class="subtitle">Customer Success Manager • Data & Analytics</p>
-      <img src="images/profile.jpeg" class="profile-pic" alt="Portrait of Amy McCall">
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <h1 class="display-5 fw-bold text-hero">Customer Success • Data & Analytics</h1>
+          <p class="lead text-hero-sub">
+            I help enterprises turn telemetry into adoption, retention, and measurable ROI.
+            Skilled in SQL, Python (pandas), and Power BI; proven delivery across complex, multi-workstream programs.
+          </p>
+          <div class="d-flex gap-3 flex-wrap">
+            <a class="btn btn-primary btn-pill" href="mailto:aplount@icloud.com">Contact Me</a>
+            <a class="btn btn-outline-light btn-pill" href="https://github.com/GeekOutAI" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn btn-outline-light btn-pill" href="https://linkedin.com/in/amy-mccall73/" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+        <div class="col-lg-5 ms-lg-auto text-center">
+          <img src="images/profile.jpeg" class="hero-pic" alt="Portrait of Amy McCall">
+        </div>
+      </div>
     </div>
   </header>
 
-  <!-- Main -->
   <main id="main">
-    <!-- Skills -->
-    <section class="middle-container">
-      <div class="container text-center">
-        <h2>My Skills</h2>
-        <div class="row">
+    <!-- HIGHLIGHTS (was 'Skills') -->
+    <section class="highlights py-5">
+      <div class="container">
+        <div class="row g-4">
           <div class="col-md-4">
-            <h3>Data Analytics</h3>
-            <p>SQL • Python (pandas) • Power BI — translating data into action & ROI.</p>
-            <i class="fa fa-bar-chart" aria-hidden="true"></i>
+            <div class="h-100 card-soft p-4">
+              <div class="icon-bubble" aria-hidden="true">📊</div>
+              <h3 class="h5 mt-3">Data Analytics</h3>
+              <p class="mb-0">SQL • Python (pandas) • Power BI — translating data into action & ROI.</p>
+            </div>
           </div>
           <div class="col-md-4">
-            <h3>Customer Success</h3>
-            <p>Retention, expansion, and telemetry-driven health scoring for CX at scale.</p>
-            <i class="fa fa-users" aria-hidden="true"></i>
+            <div class="h-100 card-soft p-4">
+              <div class="icon-bubble" aria-hidden="true">🤝</div>
+              <h3 class="h5 mt-3">Customer Success</h3>
+              <p class="mb-0">Retention, expansion, and telemetry-driven health scoring for CX at scale.</p>
+            </div>
           </div>
           <div class="col-md-4">
-            <h3>Program Delivery</h3>
-            <p>Multi-workstream execution, governance, and risk management.</p>
-            <i class="fa fa-tasks" aria-hidden="true"></i>
+            <div class="h-100 card-soft p-4">
+              <div class="icon-bubble" aria-hidden="true">🚀</div>
+              <h3 class="h5 mt-3">Program Delivery</h3>
+              <p class="mb-0">Multi-workstream execution, governance, and risk management.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section class="bottom-container">
-      <div class="contact" id="contact">
-        <h1>
-          Let’s connect
-          <a class="email-link" href="mailto:aplount@icloud.com" aria-label="Email Amy">
-            <i class="fa fa-envelope email-icon" aria-hidden="true"></i>
-          </a>
-        </h1>
+    <!-- PROJECTS -->
+    <section class="projects py-5">
+      <div class="container">
+        <div class="text-center mb-4">
+          <h2 class="section-title">Featured Projects</h2>
+          <p class="section-sub">A few things I’m building & shipping.</p>
+        </div>
 
-        <ul class="social-menu" aria-label="Social links">
-          <li><a href="https://github.com/GeekOutAI" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a></li>
-          <li><a href="https://linkedin.com/in/amy-mccall73/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-          <li><a href="https://twitter.com/aplount" target="_blank" rel="noopener" aria-label="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-          <li><a href="https://www.instagram.com/amybaltzellmccall/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-        </ul>
+        <div class="row g-4">
+          <!-- Project 1 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body d-flex flex-column">
+                <h3 class="h5 card-title">Customer Sentiment Pulse</h3>
+                <p class="card-text flex-grow-1">NLP pipeline (Python) that scores 100–500 comments and surfaces trends; Streamlit dashboard for real-time CX signals.</p>
+                <div>
+                  <a href="https://github.com/GeekOutAI/sentiment-pulse" class="btn btn-primary btn-sm btn-pill" target="_blank" rel="noopener">View Code</a>
+                  <a href="https://your-demo-link" class="btn btn-outline-secondary btn-sm btn-pill ms-2" target="_blank" rel="noopener">Live Demo</a>
+                </div>
+              </div>
+            </div>
+          </div>
 
-        <p id="curndate" aria-live="polite"></p>
+          <!-- Add more cards as needed -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about py-5">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-8">
+            <h2 class="section-title">About</h2>
+            <p class="mb-0">
+              Customer Experience leader focused on AI-driven outcomes. I design telemetry, governance, and playbooks that improve adoption,
+              reduce risk, and uncover expansion opportunities. Passionate about building practical analytics that teams actually use.
+            </p>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <a class="btn btn-primary btn-pill" href="mailto:aplount@icloud.com">Let’s work together</a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+      <div class="small text-muted">© <span id="year"></span> Amy McCall</div>
+      <ul class="social list-unstyled d-flex gap-3 m-0">
+        <li><a href="https://github.com/GeekOutAI" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a></li>
+        <li><a href="https://linkedin.com/in/amy-mccall73/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a></li>
+        <li><a href="https://twitter.com/aplount" target="_blank" rel="noopener" aria-label="Twitter">X</a></li>
+        <li><a href="mailto:aplount@icloud.com" aria-label="Email">Email</a></li>
+      </ul>
+    </div>
+  </footer>
 
-  <!-- Custom JavaScript -->
-  <script src="script.js"></script>
+  <script>
+    // Year in footer
+    document.addEventListener('DOMContentLoaded', () => {
+      const y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
