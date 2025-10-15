@@ -1,291 +1,127 @@
 /* =============================
-   Amy McCall Portfolio Styles
+   Base
    ============================= */
-
-/* Global Base Styles */
-body {
-  color: #B1D0E0;
-  margin: 0;
-  text-align: center;
-  font-family: 'Quicksand', sans-serif;
-  background-color: #F6F5F2;
-  scroll-behavior: smooth;
+:root{
+  --ink:#0b2b3b;
+  --ink-soft:#164863;
+  --brand:#3CA7F4;
+  --hero:#427D9D;
+  --paper:#F6F5F2;
+  --text:#B1D0E0;
+  --white:#ffffff;
 }
 
-/* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #121212;
-    color: #B1D0E0;
-  }
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:'Quicksand',sans-serif;
+  text-align:left;
+  color:var(--text);
+  background:var(--paper);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  scroll-behavior:smooth;
 }
 
-/* Typography */
-h1 {
-  color: #B1D0E0;
-  font-weight: 700;
-  margin: 50px auto 0;
-  font-size: 3rem;
+a:focus-visible, button:focus-visible{
+  outline:3px solid var(--brand);
+  outline-offset:2px;
 }
 
-h2 {
-  color: #6998AB;
-  padding-bottom: 10px;
-  font-size: 2.5rem;
-  line-height: 1.2;
-}
-
-h3 {
-  color: #427D9D;
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-}
-
-p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-.subtitle {
-  color: #E1ECF4;
-  margin-top: 6px;
-  font-size: 1.15rem;
-}
-
-/* Focus Visibility for Accessibility */
-a:focus-visible,
-button:focus-visible {
-  outline: 3px solid #3CA7F4;
-  outline-offset: 2px;
-}
-
-/* Skip Link (for keyboard navigation) */
-.visually-hidden-focusable:active,
-.visually-hidden-focusable:focus {
-  position: static !important;
-  width: auto;
-  height: auto;
-  margin: 0;
-  clip: auto;
+.visually-hidden-focusable:active, .visually-hidden-focusable:focus{
+  position:static!important; width:auto; height:auto; margin:0; clip:auto;
 }
 
 /* =============================
    Navbar
    ============================= */
-.navbar {
-  background-color: #164863;
-  padding: 15px;
+.navbar{
+  background:var(--ink-soft);
+}
+.navbar .navbar-brand{font-weight:700}
+.navbar .nav-link{color:#fff!important}
+.navbar .nav-link:hover{color:var(--brand)!important}
+
+/* =============================
+   Hero
+   ============================= */
+.hero{
+  background:linear-gradient(180deg, var(--hero), var(--ink-soft));
+  color:#fff;
+  padding:80px 0;
+}
+.text-hero{color:#EAF6FF}
+.text-hero-sub{color:#D7EAF7}
+.hero-pic{
+  width:220px; height:220px; object-fit:cover; border-radius:50%;
+  box-shadow:0 10px 24px rgba(0,0,0,.25); border:4px solid rgba(255,255,255,.25);
 }
 
-.navbar-brand {
-  font-size: 1.5rem;
-  font-weight: bold;
-  letter-spacing: 0.5px;
-}
+/* Buttons */
+.btn-pill{border-radius:999px; padding:.6rem 1.1rem; font-weight:600}
+.btn-primary{background:var(--brand); border-color:var(--brand)}
+.btn-primary:hover{background:#0a79c5; border-color:#0a79c5}
 
-.navbar-nav .nav-link {
-  color: white !important;
-  font-size: 1.1rem;
-  margin-right: 15px;
-  transition: color 0.3s;
+/* =============================
+   Highlights (cards)
+   ============================= */
+.highlights{background:var(--paper)}
+.card-soft{
+  background:#fff; border:0; border-radius:16px;
+  box-shadow:0 6px 20px rgba(0,0,0,.08);
 }
-
-.navbar-nav .nav-link:hover {
-  color: #3CA7F4 !important;
-  text-decoration: underline;
+.icon-bubble{
+  width:48px;height:48px;border-radius:50%;
+  display:inline-flex;align-items:center;justify-content:center;
+  background:#E9F5FF;color:#084c75;font-size:1.4rem;
 }
 
 /* =============================
-   Top Container (Hero)
+   Projects
    ============================= */
-.top-container {
-  background-color: #427D9D;
-  padding: 80px 0 60px;
-  color: white;
-}
+.section-title{color:var(--ink-soft); font-weight:700}
+.section-sub{color:#6fa8c9}
+.projects .card{border:0; border-radius:16px}
+.projects .card:hover{transform:translateY(-4px); transition:transform .2s ease}
+.projects .btn{border-radius:999px}
 
-.profile-pic {
-  border-radius: 50%;
-  width: 150px;
-  margin-top: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+/* =============================
+   About
+   ============================= */
+.about{background:#fff}
+
+/* =============================
+   Footer
+   ============================= */
+.site-footer{
+  background:var(--ink-soft);
+  color:#cfe7f6;
+  padding:22px 0;
+}
+.site-footer a{color:#cfe7f6; text-decoration:none}
+.site-footer a:hover{color:#fff; text-decoration:underline}
+
+/* =============================
+   Dark Mode
+   ============================= */
+@media (prefers-color-scheme: dark){
+  body{background:#121212;color:#cfe7f6}
+  .highlights{background:#0f1115}
+  .card-soft, .about{background:#171a21;color:#d9e6ef}
+  .projects .card{background:#171a21}
+  .projects .card .card-text{color:#cfe7f6}
+  .hero{background:linear-gradient(180deg,#1e4d6b,#0f2f42)}
 }
 
 /* =============================
-   Skills Section
+   Responsive
    ============================= */
-.middle-container {
-  background-color: #F6F5F2;
-  padding: 60px 0;
+@media (max-width: 992px){
+  .hero{padding:60px 0}
+  .hero-pic{width:180px;height:180px}
 }
 
-.middle-container h3 {
-  color: #6998AB;
-}
-
-.middle-container .row {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  flex-wrap: wrap;
-}
-
-.middle-container .col-md-4 {
-  margin-bottom: 30px;
-}
-
-.middle-container i {
-  font-size: 40px;
-  margin-top: 10px;
-  color: #427D9D;
-  transition: transform 0.2s, color 0.3s;
-}
-
-.middle-container i:hover {
-  color: #164863;
-  transform: scale(1.1);
-}
-
-/* =============================
-   Bottom Container (Contact)
-   ============================= */
-.bottom-container {
-  background-color: #164863;
-  padding: 60px 0;
-  text-align: left;
-  color: white;
-  padding-left: 50px;
-}
-
-.bottom-container h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-/* Email Icon */
-.email-icon {
-  font-size: 2.5rem;
-  color: #3CA7F4;
-  margin-left: 10px;
-  transition: color 0.3s, transform 0.3s;
-}
-
-.email-icon:hover {
-  color: #ffffff;
-  transform: scale(1.1);
-}
-
-/* Social Menu */
-.social-menu {
-  list-style: none;
-  padding: 0;
-  margin: 10px 0 0;
-}
-
-.social-menu li {
-  display: inline-block;
-  margin-right: 12px;
-}
-
-.social-menu a {
-  font-size: 24px;
-  color: #3CA7F4;
-  transition: color 0.3s, transform 0.2s;
-}
-
-.social-menu a:hover {
-  color: #ffffff;
-  transform: scale(1.15);
-}
-
-/* Date Display */
-#curndate {
-  font-size: 1.2rem;
-  margin-top: 10px;
-  color: #C9E8F2;
-}
-
-/* =============================
-   Projects Section (Optional)
-   ============================= */
-.projects {
-  background-color: #f8f9fa;
-}
-
-.projects .card {
-  border: none;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.projects .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-}
-
-.projects .btn {
-  border-radius: 25px;
-  font-weight: 500;
-}
-
-/* =============================
-   Responsive Design
-   ============================= */
-@media screen and (max-width: 992px) {
-  h1 {
-    font-size: 2.5rem;
-  }
-
-  h2 {
-    font-size: 2rem;
-  }
-
-  h3 {
-    font-size: 1.5rem;
-  }
-
-  .navbar {
-    padding: 10px;
-  }
-
-  .profile-pic {
-    width: 120px;
-  }
-
-  .bottom-container {
-    text-align: center;
-    padding-left: 0;
-  }
-
-  .bottom-container h1 {
-    justify-content: center;
-  }
-
-  .social-menu li {
-    margin: 0 8px;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  h1 {
-    font-size: 2.2rem;
-  }
-
-  h2 {
-    font-size: 1.8rem;
-  }
-
-  .subtitle {
-    font-size: 1rem;
-  }
-
-  .bottom-container h1 {
-    font-size: 2rem;
-  }
-
-  #curndate {
-    font-size: 1rem;
-  }
+@media (max-width: 576px){
+  .hero{padding:48px 0}
+  .hero-pic{width:150px;height:150px}
 }
