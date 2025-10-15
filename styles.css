@@ -1,184 +1,291 @@
-/* General Styles */
+/* =============================
+   Amy McCall Portfolio Styles
+   ============================= */
+
+/* Global Base Styles */
 body {
-    color: #B1D0E0;
-    margin: 0;
-    text-align: center;
-    font-family: 'Quicksand', sans-serif;
-    background-color: #F6F5F2;
+  color: #B1D0E0;
+  margin: 0;
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  background-color: #F6F5F2;
+  scroll-behavior: smooth;
 }
 
 /* Dark Mode Support */
 @media (prefers-color-scheme: dark) {
-    body {
-        background-color: #121212;
-        color: #B1D0E0;
-    }
+  body {
+    background-color: #121212;
+    color: #B1D0E0;
+  }
 }
 
-/* Headings */
+/* Typography */
 h1 {
-    color: #B1D0E0;
-    font-weight: bold;
-    margin: 50px auto 0 auto;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 3rem;
+  color: #B1D0E0;
+  font-weight: 700;
+  margin: 50px auto 0;
+  font-size: 3rem;
 }
 
 h2 {
-    color: #6998AB;
-    font-family: 'Quicksand', sans-serif;
-    padding-bottom: 10px;
-    font-size: 2.5rem;
-    line-height: 120%;
+  color: #6998AB;
+  padding-bottom: 10px;
+  font-size: 2.5rem;
+  line-height: 1.2;
 }
 
 h3 {
-    color: #427D9D;
-    font-size: 1.8rem;
+  color: #427D9D;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
 }
 
-/* Navigation Bar */
+p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.subtitle {
+  color: #E1ECF4;
+  margin-top: 6px;
+  font-size: 1.15rem;
+}
+
+/* Focus Visibility for Accessibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #3CA7F4;
+  outline-offset: 2px;
+}
+
+/* Skip Link (for keyboard navigation) */
+.visually-hidden-focusable:active,
+.visually-hidden-focusable:focus {
+  position: static !important;
+  width: auto;
+  height: auto;
+  margin: 0;
+  clip: auto;
+}
+
+/* =============================
+   Navbar
+   ============================= */
 .navbar {
-    background-color: #164863;
-    padding: 15px;
+  background-color: #164863;
+  padding: 15px;
 }
 
 .navbar-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
 }
 
 .navbar-nav .nav-link {
-    color: white !important;
-    font-size: 1.2rem;
-    margin-right: 15px;
+  color: white !important;
+  font-size: 1.1rem;
+  margin-right: 15px;
+  transition: color 0.3s;
 }
 
 .navbar-nav .nav-link:hover {
-    text-decoration: underline;
+  color: #3CA7F4 !important;
+  text-decoration: underline;
 }
 
-/* Top Container */
+/* =============================
+   Top Container (Hero)
+   ============================= */
 .top-container {
-    background-color: #427D9D;
-    padding: 60px 0;
-    color: white;
+  background-color: #427D9D;
+  padding: 80px 0 60px;
+  color: white;
 }
 
 .profile-pic {
-    border-radius: 50%;
-    width: 150px;
-    margin-top: 20px;
+  border-radius: 50%;
+  width: 150px;
+  margin-top: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Middle Container */
+/* =============================
+   Skills Section
+   ============================= */
 .middle-container {
-    background-color: #F6F5F2;
-    padding: 50px 0;
+  background-color: #F6F5F2;
+  padding: 60px 0;
 }
 
 .middle-container h3 {
-    color: #6998AB;
+  color: #6998AB;
 }
 
 .middle-container .row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
 }
 
 .middle-container .col-md-4 {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
-/* Bottom Container */
+.middle-container i {
+  font-size: 40px;
+  margin-top: 10px;
+  color: #427D9D;
+  transition: transform 0.2s, color 0.3s;
+}
+
+.middle-container i:hover {
+  color: #164863;
+  transform: scale(1.1);
+}
+
+/* =============================
+   Bottom Container (Contact)
+   ============================= */
 .bottom-container {
-    background-color: #164863;
-    padding: 50px 0;
-    text-align: left; 
-    color: white;
-    padding-left: 50px; 
+  background-color: #164863;
+  padding: 60px 0;
+  text-align: left;
+  color: white;
+  padding-left: 50px;
 }
 
-/* Contact Heading */
 .bottom-container h1 {
-    font-size: 2.5rem;
-    font-family: 'Quicksand', sans-serif;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 /* Email Icon */
-.bottom-container .email-icon {
-    font-size: 2.5rem;
-    color: #3CA7F4;
-    margin-left: 10px;
-    transition: color 0.3s;
+.email-icon {
+  font-size: 2.5rem;
+  color: #3CA7F4;
+  margin-left: 10px;
+  transition: color 0.3s, transform 0.3s;
 }
 
-.bottom-container .email-icon:hover {
-    color: #005f87;
+.email-icon:hover {
+  color: #ffffff;
+  transform: scale(1.1);
 }
 
-/* Social Media Icons */
-.bottom-container .social-menu {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0 0 0;
+/* Social Menu */
+.social-menu {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
 }
 
-.bottom-container .social-menu li {
-    display: inline-block;
-    margin-right: 10px;
+.social-menu li {
+  display: inline-block;
+  margin-right: 12px;
 }
 
-.bottom-container .social-menu a {
-    font-size: 24px;
-    text-decoration: none;
-    color: #3CA7F4;
-    transition: transform 0.2s, color 0.3s;
+.social-menu a {
+  font-size: 24px;
+  color: #3CA7F4;
+  transition: color 0.3s, transform 0.2s;
 }
 
-.bottom-container .social-menu a:hover {
-    color: #ffffff;
-    transform: scale(1.1);
+.social-menu a:hover {
+  color: #ffffff;
+  transform: scale(1.15);
 }
 
-/* Current Date */
+/* Date Display */
 #curndate {
-    font-size: 1.2rem;
-    margin-top: 10px;
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #C9E8F2;
 }
 
-/* Icons for Skills */
-.middle-container i {
-    font-size: 40px;
-    margin-top: 10px;
-    color: #427D9D;
+/* =============================
+   Projects Section (Optional)
+   ============================= */
+.projects {
+  background-color: #f8f9fa;
 }
 
-/* Responsive Styles */
-@media screen and (max-width: 768px) {
-    h1 {
-        font-size: 2.5rem;
-    }
+.projects .card {
+  border: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
 
-    h2 {
-        font-size: 2rem;
-    }
+.projects .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
 
-    h3 {
-        font-size: 1.5rem;
-    }
+.projects .btn {
+  border-radius: 25px;
+  font-weight: 500;
+}
 
-    .middle-container .col-md-4 {
-        width: 100%;
-    }
+/* =============================
+   Responsive Design
+   ============================= */
+@media screen and (max-width: 992px) {
+  h1 {
+    font-size: 2.5rem;
+  }
 
-    .bottom-container .social-icons {
-        flex-direction: column;
-        gap: 10px;
-    }
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  .navbar {
+    padding: 10px;
+  }
+
+  .profile-pic {
+    width: 120px;
+  }
+
+  .bottom-container {
+    text-align: center;
+    padding-left: 0;
+  }
+
+  .bottom-container h1 {
+    justify-content: center;
+  }
+
+  .social-menu li {
+    margin: 0 8px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .bottom-container h1 {
+    font-size: 2rem;
+  }
+
+  #curndate {
+    font-size: 1rem;
+  }
 }
